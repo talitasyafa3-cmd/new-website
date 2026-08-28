@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Perpus</title>
+    <style>
+        /* Gaya dasar untuk merapikan halaman */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Wadah utama form agar terlihat seperti kartu */
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            text-transform: capitalize;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            font-size: 24px;
+        }
+
+        /* Mengatur jarak antar baris input */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Membuat label vertikal dan tebal */
+        label.main-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #34495e;
+            text-transform: capitalize;
+        }
+
+        /* Mengatur semua input box, dropdown, dan textarea */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        /* Efek warna biru saat kolom input diklik/fokus */
+        input:focus, select:focus, textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        /* Merapikan susunan Radio dan Checkbox agar sejajar horizontal */
+        .inline-options {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .inline-options label {
+            font-weight: normal;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Wadah tombol aksi */
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        /* Gaya tombol */
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-transform: capitalize;
+        }
+
+        button[type="submit"] {
+            background-color: #3498db;
+            color: white;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        button[type="reset"] {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <form>
+            <h2>student registration form</h2>
+            
+            <!-- Input Nama -->
+            <div class="form-group">
+                <label for="fullname" class="main-label">full name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Input Email -->
+            <div class="form-group">
+                <label for="email" class="main-label">email</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <!-- Input Password -->
+            <div class="form-group">
+                <label for="password" class="main-label">password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <!-- Input Tanggal Lahir -->
+            <div class="form-group">
+                <label for="dob" class="main-label">date of birth</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+
+            <!-- Input Dropdown Kelas -->
+            <div class="form-group">
+                <label for="class" class="main-label">class</label>
+                <select id="class" name="class">
+                    <option value="X ICT">X ICT</option>
+                    <option value="X TCP">X TCP</option>
+                    <option value="X CCP">X CCP</option>
+                </select>
+            </div>
+
+            <!-- Pilihan Gender -->
+            <div class="form-group">
+                <label class="main-label">gender</label>
+                <div class="inline-options">
+                    <label><input type="radio" name="gender" value="male"> male</label>
+                    <label><input type="radio" name="gender" value="female"> female</label>
+                </div>
+            </div>
+
+            <!-- Pilihan Skills -->
+            <div class="form-group">
+                <label class="main-label">skills</label>
+                <div class="inline-options">
+                    <label><input type="checkbox" name="skills" value="html"> html</label>
+                    <label><input type="checkbox" name="skills" value="css"> css</label>
+                    <label><input type="checkbox" name="skills" value="javascript"> javascript</label>
+                </div>
+            </div>
+
+            <!-- Input Textarea Tentang Diri -->
+            <div class="form-group">
+                <label for="about" class="main-label">about yourself</label>
+                <textarea id="about" name="about" rows="4" placeholder="Tell us something about yourself..."></textarea>
+            </div>
+
+            <!-- Tombol Submit & Reset -->
+            <div class="button-group">
+                <button type="submit">submit</button>
+                <button type="reset">reset</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
